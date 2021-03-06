@@ -13,7 +13,7 @@ const App = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log("This callbak is for name only .");
+    console.log("This callbak is for  name only .");
   }, [name]);
 
   return (
