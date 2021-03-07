@@ -11,10 +11,10 @@ const App = () => {
   return (
     // 管理したい状態をAppContext.Providerでラップする。
     // ラップした内部のコンポーネントであれば、どれだけ階層が深いコンポーネントでもvalueを直接呼び出すことができる
-    <AppContext.Provider value={"Hello, I am a provider."}>
+    <AppContext.Provider value={{ state, dispatch }}>
       <div className="container-fluid">
-        <EventForm state={state} dispatch={dispatch} />
-        <Events state={state} dispatch={dispatch} />
+        <EventForm />
+        <Events />
       </div>
     </AppContext.Provider>
   );

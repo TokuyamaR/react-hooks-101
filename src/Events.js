@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import Event from "./Event";
 import AppContext from "./contexts/AppContext";
 
-const Events = ({ state, dispatch }) => {
+const Events = () => {
   // useContextを利用するだけで、contextをproviderを利用できる
-  const value = useContext(AppContext);
+  const { state } = useContext(AppContext);
   return (
     <>
       {/* 従来のcontextの記述例 */}
@@ -13,7 +13,6 @@ const Events = ({ state, dispatch }) => {
           return <div>{value}</div>;
         }}
       </AppContext.Consumer> */}
-      <div>{value}</div>
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>
@@ -25,7 +24,7 @@ const Events = ({ state, dispatch }) => {
         </thead>
         <tbody>
           {state.map((event, index) => (
-            <Event key={index} event={event} dispatch={dispatch} />
+            <Event key={index} event={event} />
           ))}
         </tbody>
       </table>
