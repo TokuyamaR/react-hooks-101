@@ -7,9 +7,11 @@ const Events = ({ state, dispatch }) => {
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>
-          <th>ID</th>
-          <th>タイトル</th>
-          <th>ボディー</th>
+          <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>ボディー</th>
+          </tr>
         </thead>
         <tbody>
           {state.map((event, index) => (
