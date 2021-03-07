@@ -23,6 +23,7 @@
 //   { id: 4, title: 'タイトル4', body: 'ボディー4' }
 // ]
 //
+
 const events = (state = [], action) => {
   switch (action.type) {
     case "CREATE_EVENT":
