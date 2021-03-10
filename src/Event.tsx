@@ -2,11 +2,18 @@ import React, { useContext } from "react";
 import { DELETE_EVENT } from "./actions";
 import AppContext from "./contexts/AppContext";
 
-const Event = ({ event }) => {
+interface EventProps {
+  event: {
+    id: number;
+    title: string;
+    body: string;
+  };
+}
+const Event: React.FC<EventProps> = ({ event }) => {
   const { dispatch } = useContext(AppContext);
   const deleteEvent = () => {
-    const id = event.id;
-    const result = window.confirm(
+    const id: number = event.id;
+    const result: boolean = window.confirm(
       `イベント(id=${id})を本当に削除してもよろしいですか？`
     );
     if (result) {

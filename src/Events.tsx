@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Event from "./Event";
 import AppContext from "./contexts/AppContext";
 
-const Events = () => {
+const Events: React.FC<{}> = () => {
   // useContextを利用するだけで、contextをproviderを利用できる
   const { state } = useContext(AppContext);
   return (
