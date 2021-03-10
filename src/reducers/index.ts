@@ -24,7 +24,22 @@
 // ]
 //
 import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from "../actions";
-const events = (state = [], action) => {
+
+export type ActionType = {
+  type: string;
+  id: number;
+  title?: string;
+  body?: string;
+};
+
+export type StateType = [
+  {
+    id: number;
+    title: string;
+    body: string;
+  }
+];
+const events = (state: StateType, action: ActionType) => {
   switch (action.type) {
     case CREATE_EVENT:
       const event = { title: action.title, body: action.body };

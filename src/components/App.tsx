@@ -6,7 +6,7 @@ import Events from "../Events";
 import AppContext from "../contexts/AppContext";
 import reducer from "../reducers";
 
-const App = () => {
+const App: React.FC<{}> = () => {
   const [state, dispatch] = useReducer(reducer, []);
   return (
     // 管理したい状態をAppContext.Providerでラップする。
