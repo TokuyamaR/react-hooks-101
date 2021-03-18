@@ -10,7 +10,7 @@ const Events: React.FC<{}> = () => {
       {/* 従来のcontextの記述例 */}
       {/* <AppContext.Consumer>
         {(value) => {
-          return <div>{value}</div>;
+          return < div>{value}</>;
         }}
       </AppContext.Consumer> */}
       <h4>イベント一覧</h4>
@@ -23,7 +23,7 @@ const Events: React.FC<{}> = () => {
           </tr>
         </thead>
         <tbody>
-          {state.map((event, index) => (
+          {state.events.map((event, index) => (
             <Event key={index} event={event} />
           ))}
         </tbody>
