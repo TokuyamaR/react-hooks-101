@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { StateType, ActionType } from "../reducers";
+import { StateType, ActionType } from "../reducers/events";
 
 type ContextType = {
   state: StateType;

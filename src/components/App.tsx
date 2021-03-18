@@ -7,7 +7,10 @@ import AppContext from "../contexts/AppContext";
 import reducer from "../reducers";
 
 const App: React.FC<{}> = () => {
-  const [state, dispatch] = useReducer(reducer, []);
+  const initialState = {
+    events: [],
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     // 管理したい状態をAppContext.Providerでラップする。
     // ラップした内部のコンポーネントであれば、どれだけ階層が深いコンポーネントでもvalueを直接呼び出すことができる
