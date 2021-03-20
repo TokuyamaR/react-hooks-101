@@ -49,6 +49,18 @@ const EventForm: React.FC<{}> = () => {
   };
 
   const unCreatable = title === "" || body === "";
+
+  const deleteAllOperationLogs = (e) => {
+    e.preventDefault();
+    const result = window.confirm(
+      "全ての操作ログを本当に削除しても良いですか？"
+    );
+    if (result) {
+      dispatch({
+        type: DELETE_ALL_OPEATION_LOGS,
+      });
+    }
+  };
   return (
     <div>
       <h4>イベント作成フォーム</h4>
@@ -85,6 +97,13 @@ const EventForm: React.FC<{}> = () => {
           disabled={state.events.length === 0}
         >
           全てのイベントを削除する
+        </button>
+        <button
+          className="btn btn-danger"
+          onClick={(e) => deleteAllOperationLogs(e)}
+          disabled={state.operationLogs.length === 0}
+        >
+          全ての操作ログを削除する
         </button>
       </form>
     </div>

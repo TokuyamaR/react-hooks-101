@@ -38,6 +38,7 @@ export type StateType = [
     title: string;
     body: string;
     events: [];
+    operationLogs: [];
   }
 ];
 const events = (state = [], action: ActionType) => {
