@@ -10,7 +10,7 @@ const Events: React.FC<{}> = () => {
       {/* 従来のcontextの記述例 */}
       {/* <AppContext.Consumer>
         {(value) => {
-          return < div>{value}</>;
+          return <div>{value}</div>;
         }}
       </AppContext.Consumer> */}
       <h4>イベント一覧</h4>
