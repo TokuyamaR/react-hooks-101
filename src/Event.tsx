@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { DELETE_EVENT } from "./actions";
+import { CREATE_OPEATION_LOG, DELETE_EVENT } from "./actions";
 import AppContext from "./contexts/AppContext";
-
+import { timeCurrentIso8601 } from "./utils";
 interface EventProps {
   event: {
     id: number;
@@ -20,6 +20,11 @@ const Event: React.FC<EventProps> = ({ event }) => {
       dispatch({
         type: DELETE_EVENT,
         id,
+      });
+      dispatch({
+        type: CREATE_OPEATION_LOG,
+        description: `イベント(id=${id})を削除しました`,
+        operatedAt: timeCurrentIso8601,
       });
     }
   };
