@@ -7,6 +7,7 @@ import {
 } from "./actions";
 import AppContext from "./contexts/AppContext";
 import { timeCurrentIso8601 } from "./utils";
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 
 const EventForm: React.FC<{}> = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -61,9 +62,31 @@ const EventForm: React.FC<{}> = () => {
       });
     }
   };
+
+  const HistoryPushLink = () => {
+    const history = useHistory();
+    const queries = "?search_word=&prefecture=1&isLogin=false";
+    return (
+      <button onClick={() => history.push("/history")}>history push</button>
+    );
+  };
+
+  const HistoryPushConfirm = () => {
+    return <div>This page is for react router display test.</div>;
+  };
   return (
     <div>
       <h4>イベント作成フォーム</h4>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <HistoryPushLink />
+          </Route>
+          <Route path="/history" exact>
+            <HistoryPushConfirm />
+          </Route>
+        </Switch>
+      </BrowserRouter>
       <form>
         <div className="form-group">
           <label htmlFor="formEventTitle">タイトル</label>
